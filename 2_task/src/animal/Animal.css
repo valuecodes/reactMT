@@ -1,0 +1,31 @@
+
+.animal{
+    width: 200px;
+    background-color: rgb(121, 121, 121);
+    color: rgb(235, 235, 235);
+    border-radius: 5px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 10px;
+}
+
+.animal img{
+    height: 200px;
+}
+
+.animal button{
+    height: 40px;
+    font-size: 16px;
+    width: 100%;
+    border: none;
+    background-color: rgb(121, 121, 121);
+    color: rgb(235, 235, 235);
+    border-radius: 0 0 5px 5px;
+    cursor: pointer;
+}
+
+.animal button:hover{
+    background-color: rgb(73, 73, 73);
+}
