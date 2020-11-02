@@ -1,8 +1,10 @@
 .cards{
+  margin: auto;
+  max-width: 1200px;
   min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
-  background-color: rgb(236, 236, 236);
+  background-color: rgb(219, 219, 219);
 }

@@ -8,12 +8,12 @@ function greeting(name){
 export default function Animal(props){
     return(
         <div className='animal'>
-            <h2>{props.animal.name}</h2>
+            <h2>{props.name}</h2>
             <img 
-                alt={`${props.animal.name}`}
-                src={`https://source.unsplash.com/1600x900/?${props.animal.image}`}
+                alt={`${props.name}`}
+                src={`https://source.unsplash.com/1600x900/?${props.image}`}
             />
-            <button onClick={() => greeting(props.animal.name)}>Click Here</button>
+            <button onClick={() => greeting(props.name)}>Click Here</button>
         </div>
     )
 }
