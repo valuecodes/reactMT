@@ -1,0 +1,28 @@
+.circle{
+    height: 150px;
+    width: 150px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 50%;
+    display:inline-block;
+    margin: 1rem;
+    filter: brightness(40%);
+    cursor: pointer;
+    transition: filter 0.4s;
+}
+
+.springgreen{
+    background-color: springgreen;
+}
+.tomato{
+    background-color: tomato;
+}
+.yellow{
+    background-color: yellow;
+}
+.deepskyblue{
+    background-color: deepskyblue;
+}
+
+.active{
+    filter: brightness(100%);    
+}

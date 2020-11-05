@@ -1,0 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
+
+body {
+  margin: 0;
+  font-family: 'Permanent Marker';
+  /* background-image: linear-gradient(to right top, rgba(32, 109, 39, 0.322),rgba(27, 20, 20, 0.801)); */
+  background-color: rgb(160, 160, 160);
+  background-attachment: fixed;
+  text-align: center;
+  color: rgb(255, 255, 255);
+}
+
+button{
+  padding: 1rem;
+  margin: 1rem;
+  background-color: rgb(235, 235, 235);
+  border: none;
+  border-radius: 5px;
+  font-size:1rem;
+  text-transform: uppercase;
+}
+
+.score{
+  font-size: 2rem;
+}
