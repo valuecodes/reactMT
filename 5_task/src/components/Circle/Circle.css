@@ -5,7 +5,7 @@
     border-radius: 50%;
     display:inline-block;
     margin: 1rem;
-    filter: brightness(40%);
+    filter: blur(30px);
     cursor: pointer;
     transition: filter 0.4s;
 }
@@ -24,5 +24,12 @@
 }
 
 .active{
-    filter: brightness(100%);    
+    filter: blur(0px)    
 }
+
+@media only screen and (max-width: 400px) {
+    .circle {
+        height: 100px;
+        width: 100px
+    }
+  }

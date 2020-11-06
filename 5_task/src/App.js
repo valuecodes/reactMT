@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import Circle from './components/Circle/Circle'
-import './App.css';
 import GameOver from './components/GameOver/GameOver'
 
 const getRandomInteger = (max) =>{
@@ -14,6 +13,7 @@ class App extends Component {
     current:0,
     showGameOver:false,
     rounds:0,
+    clicked:false,//Prevent double clicking
     circles:[
       {id:1,color:'springgreen'},
       {id:2,color:'tomato'},
@@ -26,17 +26,30 @@ class App extends Component {
   timer=undefined
 
   clickHandler=(id)=>{ 
-    console.log(getRandomInteger(4))
-    console.log('You clicked: '+id)
+
     if(this.state.current!==id){
+      this.playSound('gameOver')
       this.stopHandler()
       return
     }
 
+    if(this.state.clicked){
+      this.playSound('doubleClick')      
+      return
+    }
+
+    this.playSound('click')
     this.setState({
       score:this.state.score+1,
-      rounds:0
+      rounds:0,
+      clicked:true
     })
+  }
+
+  playSound=(sound)=>{
+    var audio = new Audio(`/assets/${sound}.wav`);
+    audio.crossOrigin = 'anonymous'
+    audio.play();
   }
  
   nextCircle = () =>{
@@ -53,11 +66,12 @@ class App extends Component {
 
     this.setState({
       current: nextActive,
+      rounds:this.state.rounds+1,
+      clicked:false
     })
 
     this.pace *= 0.95
     this.timer = setTimeout(this.nextCircle,this.pace);
-    console.log("Active circle is: ",this.state.current)
   }
 
   startHandler=()=>{

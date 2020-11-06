@@ -1,3 +1,3 @@
 # Task 5
-
-![Image description](./public/app.png)
+## Speedtest game
+![Image description](./public/app.JPG)

@@ -26,3 +26,9 @@
 .gameOverBox button{
     border:2px solid rgb(122, 122, 122);
 }
+
+@media only screen and (max-width: 400px) {
+    .gameOverBox {
+        width: 60%;
+    }
+  }
