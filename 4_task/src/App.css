@@ -32,11 +32,25 @@
   padding: 2rem;
 }
 
+.form{
+  padding: 0rem 1rem;
+  background-color: var(--primary-color);
+}
+
+form input{
+  margin: 0.2rem 0;
+  margin-left: 1rem;
+}
+
+form .button{
+  margin-left: 9rem;
+}
+
 .article{
   display: block;
   background-color: var(--primary-color);
   padding: 1rem;
-  height: calc(100% - 2rem) ;
+  height: calc(100% - 13rem) ;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -52,7 +66,7 @@
   object-fit: cover;
 }
 
-.article button{
+button,.button{
   background-color: var(--secondary-color);
   padding: 1rem 2rem;
   margin-right: 1rem;
