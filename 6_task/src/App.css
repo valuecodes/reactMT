@@ -1,0 +1,116 @@
+@import url('https://fonts.googleapis.com/css2?family=Libre+Barcode+39+Text&display=swap');
+
+*{
+  margin: 0;
+}
+
+ul{
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+input,textarea,select,button{
+  border-radius: 5px;
+  border: none;
+}
+
+.container{
+  max-width: 800px;
+  margin: auto;
+}
+
+
+/* Form */
+.form{
+  padding: 1rem;
+  background-color: rgb(52, 82, 83);
+}
+
+.form ul li{
+  display: grid;
+  grid-template-columns: 10rem 15rem;
+  grid-auto-rows: 3rem;
+  margin: 1rem;
+  color: white;
+}
+
+.submit{
+  grid-column: 2/3;
+  background-color: cadetblue;
+  color: white;
+  cursor: pointer;
+}
+
+/* View */
+.view{
+  padding: 2rem;
+}
+
+.view h2{
+  margin: 1rem 0;
+}
+
+.viewList{
+  background-color: rgb(218, 218, 218);
+  box-shadow: 0px 0px 5px 2px rgb(156, 156, 156);
+}
+
+.viewList::before{
+  content: '';
+  display: block;
+  position: absolute;
+  height: 323px;
+  width: 5px;
+  border: 1px solid rgb(49, 90, 92);
+  margin-left: 3rem;
+  background-color: rgba(49, 90, 92, 0.486);
+}
+
+.viewList li{
+  height: 4rem;
+  padding-left: 5rem;
+  border-bottom: black 1px dotted;
+  display: grid;
+  align-items: center;
+  grid-template-columns: 10rem auto;
+}
+
+.viewList li p{
+  font-size: 3rem;
+  font-family: 'Libre Barcode 39 Text', cursive;
+}
+
+/* Popup */
+.overlay{
+  position: absolute;
+  height: 100vh;
+  width: 100vw;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.664);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.popup{
+  min-width: 30rem;
+  padding:2rem;
+  background-color: white;
+  border-radius: 5px;
+}
+
+.popup ul li{
+  display: grid;
+  grid-template-columns: 10rem auto;
+  margin-bottom: 1rem;
+  border-bottom: 1px solid rgb(177, 177, 177);
+}
+
+.popup button{
+  height: 3rem;
+  width: 100%;
+  background-color: cadetblue;
+  color: white;
+}
