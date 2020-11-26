@@ -1,0 +1,27 @@
+header,
+footer {
+  background-color: #69013b;
+  color: #fce0d3;
+  padding: 2rem;
+}
+
+footer {
+  text-align: center;
+}
+
+main {
+  background-color: #fff;
+  padding: 2rem;
+  min-height: calc(100vh - 170px);
+}
+main h2,
+main p {
+  margin: 2rem 0;
+}
+
+main button {
+  background-color: #fce0d1;
+  border: none;
+  padding: 1rem 2rem;
+  margin-right: 1rem;
+}
