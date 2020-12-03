@@ -20,7 +20,29 @@ input,textarea,select,button{
   margin: auto;
 }
 
+.top{
+  display: flex;
+  margin: auto;
+}
 
+
+
+/* NoteList */
+.noteList{
+  padding: 1rem;
+  background-color: rgb(196, 196, 196);
+  width: 400px;
+}
+
+.noteList h2{
+  margin-bottom: 1rem;
+}
+
+.resultNote{
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  border-bottom: 1px solid cadetblue;
+}
 /* Form */
 .form{
   padding: 1rem;
@@ -103,7 +125,7 @@ input,textarea,select,button{
 
 .popup ul li{
   display: grid;
-  grid-template-columns: 10rem auto;
+  grid-template-columns: 15rem auto;
   margin-bottom: 1rem;
   border-bottom: 1px solid rgb(177, 177, 177);
 }
@@ -113,4 +135,9 @@ input,textarea,select,button{
   width: 100%;
   background-color: cadetblue;
   color: white;
+}
+
+.popupButtons{
+  display: grid;
+  grid-gap: 0.5rem;
 }

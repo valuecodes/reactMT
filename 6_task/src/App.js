@@ -1,48 +1,59 @@
-import React, { Component } from 'react';
+import React, { Component, useState, useEffect } from 'react';
 import Form from './Components/Form'
 import View from './Components/View'
 import Popup from './Components/Popup'
+import NoteList from './Components/NoteList'
 import './App.css';
+import axios from 'axios';
 
-class App extends Component {
-  
-  state={
+export default function App() {
+
+  const [note, setNote] = useState({
     firstName:'',
     lastName:'',
     phone:'',
     role:'',
     message:'',
-    showPopup:false
-  }
+  })
 
-  handleFormInput = (e) => {
+  const [showPopup, setShowPopup] = useState(false)
+
+  const handleFormInput = (e) => {
     const value = e.target.value
     const name = e.target.name
-    this.setState({
+    setNote({
+      ...note,
       [name]:value
     })
   }
 
-  handleShowPopup = (e) => {
-    this.setState({
-      showPopup:true
-    })
+  const handleShowPopup = (e) => {
+    setShowPopup(true)
+    e.preventDefault()
   }
 
-  render() {
-    return (
-      <div>
+  const submitHandler = (e) => {
+    axios.post('http://localhost:3001/notes',note)
+    window.location.reload()
+    setShowPopup(false)
+  }
+
+  return (
+    <div>
+      <div className='top container'>
         <Form 
-          handleFormInput={this.handleFormInput} 
-          handleShowPopup={this.handleShowPopup}
+          handleFormInput={handleFormInput} 
+          handleShowPopup={handleShowPopup}
         />
-        <View form={this.state}/>
-        {this.state.showPopup && 
-          <Popup form={this.state}/>
-        }
+        <NoteList/>        
       </div>
-    );
-  }
+      <View form={note}/>
+      {showPopup && 
+        <Popup
+            form={note}
+            submit={submitHandler}
+          />
+      }
+    </div>
+  )
 }
-
-export default App;

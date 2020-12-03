@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Popup = (props) => {
+const Popup = ({ form, submit }) => {
 
     const closeHandler = () =>{
         window.location.reload()
@@ -12,26 +12,29 @@ const Popup = (props) => {
                 <ul>
                     <li>
                         <label>First Name</label>
-                        <p>{props.form.firstName}</p>
+                        <p>{form.firstName}</p>
                     </li>
                     <li>
                         <label>Last Name</label>
-                        <p>{props.form.lastName}</p>
+                        <p>{form.lastName}</p>
                     </li>
                     <li>
                         <label>Phone Number</label>
-                        <p>{props.form.phone}</p>
+                        <p>{form.phone}</p>
                     </li>
                     <li>
                         <label>Message</label>
-                        <p>{props.form.message}</p>
+                        <p>{form.message}</p>
                     </li>
                     <li>
                         <label>Role</label>
-                        <p>{props.form.role}</p>
+                        <p>{form.role}</p>
                     </li>
                 </ul>
-                <button onClick={closeHandler}>Close</button>
+                <div className='popupButtons'>
+                    <button onClick={submit}>Yes, I am sure</button>
+                    <button onClick={closeHandler}>Nope, I dont want to post it</button>                    
+                </div>
             </div>
         </div>
     );
