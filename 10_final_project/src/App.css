@@ -1,0 +1,29 @@
+:root{
+    --primary-color: #78b4cf;
+    --secondary-color:#d17d57;
+    --text-light:white;
+  }
+
+.app{
+    height: 100vh;
+    display: grid;
+    grid-template-rows: 4rem 1fr 4rem;
+}
+
+.main{
+    margin-top: 2rem;
+}
+
+.container{
+    max-width: 1400px;
+    width: 100%;
+    margin: auto;
+}
+
+.footer{
+    color: var(--text-light);
+    background-color: var(--primary-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
