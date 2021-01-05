@@ -1,12 +1,19 @@
 import React from 'react'
+import { Switch, Route } from 'react-router-dom'
+import AddCompany from './AddCompany'
+import Companies from './Companies'
+import Home from './Home'
 
 export default function Main() {
     return (
-        <div className='main'>
+        <main className='main'>
             <div className='container'>
-                Main
+                <Switch>
+                    <Route path='/' exact component={Home}/>
+                    <Route path='/companies' exact component={Companies}/>
+                    <Route path='/add_company' exact component={AddCompany}/>
+                </Switch>
             </div>
-            
-        </div>
+        </main>
     )
 }
