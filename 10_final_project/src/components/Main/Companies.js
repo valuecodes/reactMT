@@ -7,7 +7,7 @@ export default function Companies() {
     const [companies,setCompanies] = useState([])
 
     useEffect(() => {
-        axios.get("http://localhost:3001/companies/").then((response) => {
+        axios.get("https://json-server-react.herokuapp.com/companies").then((response) => {
             setCompanies(response.data)
           });
     }, [])
