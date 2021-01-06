@@ -1,0 +1,22 @@
+{
+    "companies":[
+        {
+            "name":"Company 1",
+            "sector":"IT",
+            "employees":[
+                {"name":"Tom","position":"CEO"},
+                {"name":"Jack","position":"CFO"},
+                {"name":"Matt","position":"Software Engineer"}
+            ]
+        },
+        {
+            "name":"Company 2",
+            "sector":"Industrial",
+            "employees":[
+                {"name":"Micheal","position":"CEO"},
+                {"name":"Lindsay","position":"CFO"},
+                {"name":"Catherine","position":"Software Engineer"}
+            ]
+        }
+    ]
+}
