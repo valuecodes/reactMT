@@ -20,6 +20,9 @@ const useStyles = makeStyles((theme) => ({
   root: {
     maxWidth: 345,
   },
+  header:{
+    fontSize:30
+  },
   media: {
     height: 0,
     paddingTop: '56.25%', // 16:9
@@ -50,18 +53,8 @@ export default function Company({company}) {
   return (
     <Card className={`${classes.root} company`}>
       <CardHeader
-        avatar={
-          <Avatar aria-label="company" className={classes.avatar}>
-            {company.name&& company.name.charAt(0)}
-          </Avatar>
-        }
-        // action={
-        //   <IconButton aria-label="settings">
-        //     <MoreVertIcon />
-        //   </IconButton>
-        // }
+        className={classes.header}
         title={company.name}
-        subheader={`Employees: ${company.employees.length}`}
       />
       <CardMedia
         className={classes.media}
@@ -72,11 +65,12 @@ export default function Company({company}) {
         <Typography variant="body2" color="textSecondary" component="p">
         Sector: {company.sector}
         </Typography>
+        <Typography variant="body2" color="textSecondary" component="p">
+        {`Employees: ${company.employees.length}`}
+        </Typography>
+        
       </CardContent>
       <CardActions disableSpacing>
-        <IconButton aria-label="add to favorites">
-          <FavoriteIcon />
-        </IconButton>
         <IconButton aria-label="share">
           <ShareIcon />
         </IconButton>
