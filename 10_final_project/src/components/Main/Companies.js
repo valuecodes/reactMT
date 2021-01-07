@@ -16,8 +16,8 @@ export default function Companies() {
         <div>
             <h1>Companies</h1> 
             <div className='companies'>
-                {companies.map(company =>
-                    <Company company={company}/>
+                {companies.map((company,index) =>
+                    <Company key={index} company={company}/>
                 )}                
             </div>
         </div>

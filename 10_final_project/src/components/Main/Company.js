@@ -7,14 +7,14 @@ import CardMedia from '@material-ui/core/CardMedia';
 import CardContent from '@material-ui/core/CardContent';
 import CardActions from '@material-ui/core/CardActions';
 import Collapse from '@material-ui/core/Collapse';
-import Avatar from '@material-ui/core/Avatar';
 import IconButton from '@material-ui/core/IconButton';
 import Typography from '@material-ui/core/Typography';
 import { red } from '@material-ui/core/colors';
-import FavoriteIcon from '@material-ui/icons/Favorite';
 import ShareIcon from '@material-ui/icons/Share';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
-import MoreVertIcon from '@material-ui/icons/MoreVert';
+import PhoneIcon from '@material-ui/icons/Phone';
+import { useRouteMatch, Link } from 'react-router-dom'
+import Tab from '@material-ui/core/Tab';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -40,21 +40,30 @@ const useStyles = makeStyles((theme) => ({
   avatar: {
     backgroundColor: red[500],
   },
+  CardActions:{
+    display:'flex',
+    justifyContent:'flex-end'
+  }
 }));
 
 export default function Company({company}) {
   const classes = useStyles();
   const [expanded, setExpanded] = React.useState(false);
-
+  let { path, url } = useRouteMatch()
   const handleExpandClick = () => {
     setExpanded(!expanded);
   };
-
+  let link =`${url}/${company.id}`
   return (
     <Card className={`${classes.root} company`}>
       <CardHeader
         className={classes.header}
         title={company.name}
+        action={
+          <IconButton aria-label="settings">
+            <PhoneIcon />
+          </IconButton>
+        }
       />
       <CardMedia
         className={classes.media}
@@ -62,37 +71,16 @@ export default function Company({company}) {
         title="Paella dish"
       />
       <CardContent>
-        <Typography variant="body2" color="textSecondary" component="p">
+        <Typography variant="body1" color="primary">
         Sector: {company.sector}
         </Typography>
         <Typography variant="body2" color="textSecondary" component="p">
         {`Employees: ${company.employees.length}`}
         </Typography>
-        
       </CardContent>
-      <CardActions disableSpacing>
-        <IconButton aria-label="share">
-          <ShareIcon />
-        </IconButton>
-        <IconButton
-          className={clsx(classes.expand, {
-            [classes.expandOpen]: expanded,
-          })}
-          onClick={handleExpandClick}
-          aria-expanded={expanded}
-          aria-label="show more"
-        >
-          <ExpandMoreIcon />
-        </IconButton>
+      <CardActions className={classes.CardActions} disableSpacing>
+        <Tab label='Read more' to={link} component={Link} />
       </CardActions>
-      <Collapse in={expanded} timeout="auto" unmountOnExit>
-        <CardContent>
-            <h3>Employees</h3>
-            {company.employees.map(item =>
-                <Typography paragraph>Name: {item.name} ({item.position})</Typography>    
-            )}
-        </CardContent>
-      </Collapse>
     </Card>
   );
 }

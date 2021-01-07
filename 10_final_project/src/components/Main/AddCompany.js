@@ -108,7 +108,6 @@ export default function AddCompany() {
                 label="Name"
                 name="name"
                 autoComplete="name"
-                autoFocus
                 onChange={changeValueHandler}
               />
             <FormControl variant="filled" className={classes.formControl}>
@@ -131,8 +130,8 @@ export default function AddCompany() {
             </FormControl>
             <h2>Employees</h2>
             <List component="nav" aria-label="secondary mailbox folders">
-                {newCompany.employees.map(item =>
-                    <ListItem button>
+                {newCompany.employees.map((item,index) =>
+                    <ListItem key={index} button>
                         <ListItemText primary={item.name} />
                         <ListItemText primary={item.position} />
                     </ListItem>        
@@ -148,7 +147,6 @@ export default function AddCompany() {
                     label="Name"
                     name="name"
                     autoComplete="name"
-                    autoFocus
                     onChange={changeEmpHandler}
                 />
                 <TextField
@@ -160,7 +158,6 @@ export default function AddCompany() {
                     label="Position"
                     name="position"
                     autoComplete="position"
-                    autoFocus
                     onChange={changeEmpHandler}
                 />    
                 <Button  onClick={addEmpHandler} variant="outlined" color="primary">Add Employee</Button>            

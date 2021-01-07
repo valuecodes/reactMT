@@ -1,3 +1,38 @@
+@import url('https://fonts.googleapis.com/css2?family=Baloo+Da+2:wght@400;500;600&display=swap');
+
+html{
+  font-family: 'Baloo Da 2', cursive;
+  background-color: #EEF2F3;
+}
+
+ul{
+    list-style-type: none;
+    padding: 0;
+}
+
+.companyPage{
+    margin: 2rem;
+}
+
+.companyCard{
+    padding: 1rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.companyPage ul li{
+    display: grid;
+    grid-template-columns: 10rem auto;
+    align-items: center;
+}
+.companyPage ul li h1{
+    margin: 0;
+}
+.companyPage ul li b{
+font-size: 1.6rem;
+color: var(--primary-color);
+}
+
 :root{
     --primary-color: #4c7385;
     --secondary-color:#d17d57;
@@ -8,16 +43,14 @@
     height: 100vh;
     display: grid;
     grid-template-rows: 4rem 1fr 4rem;
-}
-
-.main{
-    margin-top: 2rem;
+    font-family: 'Baloo Da 2', cursive;
 }
 
 .container{
     max-width: 1400px;
     width: 100%;
     margin: auto;
+    height: 100%;
 }
 
 .footer{
@@ -46,4 +79,17 @@
     grid-template-rows: 3rem;
     align-items: center;
     grid-gap: 0.5rem;
+}
+
+.landingPage{
+    background-image: url('https://images.unsplash.com/photo-1487020530383-c62abe4f9346?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+    background-size: cover;
+    height: inherit;
+    text-align: center;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: -1;
 }
