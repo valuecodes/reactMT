@@ -8,13 +8,12 @@ import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 import InputLabel from '@material-ui/core/InputLabel';
 import MenuItem from '@material-ui/core/MenuItem';
-import FormHelperText from '@material-ui/core/FormHelperText';
 import FormControl from '@material-ui/core/FormControl';
 import Select from '@material-ui/core/Select';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
-import Divider from '@material-ui/core/Divider';
+
 const useStyles = makeStyles((theme) => ({
     paper: {
       marginTop: theme.spacing(8),
@@ -29,6 +28,8 @@ const useStyles = makeStyles((theme) => ({
     form: {
       width: '100%', // Fix IE 11 issue.
       marginTop: theme.spacing(1),
+      display:'grid',
+      gridGap:10
     },
     submit: {
       margin: theme.spacing(3, 0, 2),
@@ -46,6 +47,7 @@ export default function AddCompany() {
     const [newCompany,setNewCompany] = useState({
         name:'',
         sector:'',
+        revenue:0,
         employees:[]
     })
 
@@ -109,7 +111,15 @@ export default function AddCompany() {
                 name="name"
                 autoComplete="name"
                 onChange={changeValueHandler}
-              />
+              />            
+              <TextField
+              id="outlined-number"
+              label="Revenue (Millions)"
+              name="revenue"
+              type="number"
+              variant="outlined"
+              onChange={changeValueHandler}
+            />
             <FormControl variant="filled" className={classes.formControl}>
                 <InputLabel id="demo-simple-select-filled-label">Sector</InputLabel>
                 <Select
@@ -123,11 +133,12 @@ export default function AddCompany() {
                     <MenuItem value="">
                         <em>None</em>
                     </MenuItem>
-                    {sectors.map(item =>
-                        <MenuItem value={item}>{item}</MenuItem>
+                    {sectors.map((item,index) =>
+                        <MenuItem key={index} value={item}>{item}</MenuItem>
                     )}
                 </Select>
             </FormControl>
+
             <h2>Employees</h2>
             <List component="nav" aria-label="secondary mailbox folders">
                 {newCompany.employees.map((item,index) =>

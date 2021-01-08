@@ -1,4 +1,5 @@
 import React from 'react'
+import './Main.css'
 import { Switch, Route } from 'react-router-dom'
 import AddCompany from './AddCompany'
 import Companies from './Companies'

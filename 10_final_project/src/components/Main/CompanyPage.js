@@ -6,6 +6,7 @@ import Typography from '@material-ui/core/Typography';
 import Card from '@material-ui/core/Card';
 import CardMedia from '@material-ui/core/CardMedia';
 import { makeStyles } from '@material-ui/core/styles';
+import { Divider } from '@material-ui/core';
 
 const useStyles = makeStyles((theme) => ({
     media: {
@@ -34,11 +35,14 @@ export default function CompanyPage() {
                 <Card className='companyCard'>
                 <div>
                     <ul>
-                        <li><h1>{company.name}</h1></li>
+                        <li className='companyHeader'>
+                            <h1>{company.name}</h1>
+                        </li>
+                        <Divider/>
                         <li><h2>Sector</h2> <b>{company.sector}</b></li>
+                        <li><h2>Revenue</h2> <b>{company.revenue}M</b></li>
                         <li><h2>Employees</h2> <b>{company.employees.length}</b></li>
                     </ul>
-                    
                     <CardContent>
                         <h3>Employees</h3>
                         {company.employees.map((item,index) =>
@@ -47,7 +51,6 @@ export default function CompanyPage() {
                     </CardContent>
                 </div>
                 <div>
-                    {/* <img  src={`https://source.unsplash.com/1600x900/?${company.sector}`}/> */}
                 <CardMedia
                     className={classes.media}
                     image={`https://source.unsplash.com/1600x900/?${company.sector}`}

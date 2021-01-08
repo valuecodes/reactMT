@@ -1,17 +1,13 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import clsx from 'clsx';
 import Card from '@material-ui/core/Card';
 import CardHeader from '@material-ui/core/CardHeader';
 import CardMedia from '@material-ui/core/CardMedia';
 import CardContent from '@material-ui/core/CardContent';
 import CardActions from '@material-ui/core/CardActions';
-import Collapse from '@material-ui/core/Collapse';
 import IconButton from '@material-ui/core/IconButton';
 import Typography from '@material-ui/core/Typography';
 import { red } from '@material-ui/core/colors';
-import ShareIcon from '@material-ui/icons/Share';
-import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import PhoneIcon from '@material-ui/icons/Phone';
 import { useRouteMatch, Link } from 'react-router-dom'
 import Tab from '@material-ui/core/Tab';
@@ -48,11 +44,7 @@ const useStyles = makeStyles((theme) => ({
 
 export default function Company({company}) {
   const classes = useStyles();
-  const [expanded, setExpanded] = React.useState(false);
-  let { path, url } = useRouteMatch()
-  const handleExpandClick = () => {
-    setExpanded(!expanded);
-  };
+  let { url } = useRouteMatch()
   let link =`${url}/${company.id}`
   return (
     <Card className={`${classes.root} company`}>
@@ -76,6 +68,9 @@ export default function Company({company}) {
         </Typography>
         <Typography variant="body2" color="textSecondary" component="p">
         {`Employees: ${company.employees.length}`}
+        </Typography>
+        <Typography variant="body2" color="textSecondary" component="p">
+        {`Revenue: ${company.revenue}M`}
         </Typography>
       </CardContent>
       <CardActions className={classes.CardActions} disableSpacing>

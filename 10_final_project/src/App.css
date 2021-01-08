@@ -25,6 +25,11 @@ ul{
     grid-template-columns: 10rem auto;
     align-items: center;
 }
+
+.companyHeader h1{
+    grid-column: 1/3;
+}
+
 .companyPage ul li h1{
     margin: 0;
 }

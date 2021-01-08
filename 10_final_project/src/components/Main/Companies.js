@@ -1,6 +1,7 @@
 import React,{useEffect,useState} from 'react'
 import axios from 'axios'
 import Company from './Company';
+import BarChart from './BarChart';
 
 export default function Companies() {
 
@@ -15,6 +16,7 @@ export default function Companies() {
     return (
         <div>
             <h1>Companies</h1> 
+            <BarChart companies={companies}/>
             <div className='companies'>
                 {companies.map((company,index) =>
                     <Company key={index} company={company}/>
